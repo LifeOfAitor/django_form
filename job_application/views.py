@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+# redirects to index.html when the server launches
+def index(request):
+    return render(request, "index.html")
