@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # commands to create the database
 # python manage.py makemigrations
 # this command created 0001_initial.py inside migrations

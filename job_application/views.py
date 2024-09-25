@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .forms import ContactForm
+from .models import Form
+from django.contrib import messages
 
 
 # redirects to index.html when the server launches
@@ -16,6 +18,11 @@ def index(request):
             email = form.cleaned_data["email"]
             date = form.cleaned_data["date"]
             occupation = form.cleaned_data["occupation"]
+
+            # store data on the database#
+            Form.objects.create(first_name=first_name, last_name=last_name,
+                                email=email, date=date, occupation=occupation)
+            # show message on index when form sent correctly
         else:
             # This will print any form validation errors
             print(form.errors)
