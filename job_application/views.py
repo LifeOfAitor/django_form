@@ -35,6 +35,9 @@ def index(request):
             print(form.errors)
     return render(request, "index.html")
 
+def about(request):
+    return render(request, "about.html")
+
 
 def send_mail(name, user_email):
     message_body = f"""
